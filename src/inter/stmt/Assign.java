@@ -11,16 +11,16 @@ public class Assign extends Stmt {
 	protected Expr expr;
 
 	public Assign(Id i, Expr e) {
-		if ( check(i.type(), e.type() ) == null )
+		if (check(i.type(), e.type()) == null)
 			error("valor de expressão "
 					+ "incompatível com o "
-					+ "tipo da variável");
+					+ "tipo da variável " + i.type() + e.type());
 		id = i;
 		expr = e;
 		addChild(id);
 		addChild(expr);
 	}
-	
+
 	private static Tag check(Tag t1, Tag t2) {
 		if (t1.isReal() && !t2.isBool())
 			return Tag.REAL;
@@ -28,16 +28,18 @@ public class Assign extends Stmt {
 			return Tag.INT;
 		else if (t1.isBool() && t2.isBool())
 			return Tag.BOOL;
+		else if (t1.isInt() && t2.isRom())
+			return Tag.ROM;
 		return null;
 	}
 
 	@Override
 	public void gen() {
 		Expr e = expr.gen();
-		if ( id.type() == e.type() )
+		if (id.type() == e.type())
 			code.emitStore(id, e);
 		else {
-			Temp t = new Temp( id.type() );
+			Temp t = new Temp(id.type());
 			code.emitConvert(t, e);
 			code.emitStore(id, t);
 		}

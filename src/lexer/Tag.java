@@ -4,7 +4,7 @@ public enum Tag {
 	// Reserved Words
 	PROGRAM("PROGRAM"), BEGIN("BEGIN"), END("END"),
 	INT("INT"), REAL("REAL"), BOOL("BOOL"),
-	WRITE("WRITE"), IF("IF"), ROM_IND("ROM_IND"),
+	WRITE("WRITE"), IF("IF"), ROM("ROM"),
 	// Assign
 	ASSIGN("ASSIGN"),
 	// Arithmetical Operators
@@ -48,7 +48,11 @@ public enum Tag {
 		return (isInt() || isReal());
 	}
 
+	public boolean isRom() {
+		return this == Tag.LIT_ROM;
+	}
+
 	public boolean isType() {
-		return isNum() || isBool();
+		return isNum() || isBool() || isRom();
 	}
 }

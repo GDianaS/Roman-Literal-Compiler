@@ -9,7 +9,7 @@ public abstract class Node {
 	protected LinkedList<Node> children = new LinkedList<Node>();
 
 	public static void error(String s) {
-		System.err.println("linha " 
+		System.err.println("linha "
 				+ Lexer.line() + ": " + s);
 		System.exit(0);
 	}
@@ -25,14 +25,14 @@ public abstract class Node {
 	private String strTree(String ident) {
 		StringBuffer sb = new StringBuffer();
 		sb.append(toString());
-		for( Node n: children() ) {
+		for (Node n : children()) {
 			sb.append("\n" + ident + "|--> ");
-			sb.append(n.strTree(ident + "     ")); //5x espaço
+			sb.append(n.strTree(ident + "     ")); // 5x espaço
 		}
 		return sb.toString();
 	}
 
-	protected void addChild( Node n ) {
+	protected void addChild(Node n) {
 		children.add(n);
 	}
 
