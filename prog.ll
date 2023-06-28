@@ -11,7 +11,7 @@ store i32 0, i32* %b
 %c = alloca double
 store double 0.0, double* %c
 store i32 2, i32* %a
-store i32 3, i32* %b
+store i32 30, i32* %b
 %1 = load i32, i32* %a
 %2 = load i32, i32* %b
 %3 = add i32 %1, %2
