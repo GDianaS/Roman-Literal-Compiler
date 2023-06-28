@@ -3,6 +3,9 @@ Este projeto é uma versão resumida da linguagem DL.
 Esta versao faz as análises léxica, sintática e semântica e a geração de código intermediário.  
 Ela está de acordo com a gramática abaixo.  
 
+## Adicional
+Este projeto conta com a funcionalidade referente a análise de algoritmos romanos.
+
 ## Gramática
 PROGRAM				::= programa ID BLOCK  
 BLOCK				::= inicio STMTS fim  
@@ -30,4 +33,5 @@ TYPE     	::= inteiro | real | booleano
 ## Algoritmos Romanos
 ROM           ::= 0r(LIT_ROM)+   
 LIT_ROM       ::= i | v | x | l | c | d | m   
-   
+
+## Exemplos de Entradas

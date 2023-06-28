@@ -25,7 +25,7 @@ public class DL {
 
 		// Imprimindo a árvore sintática e código intermediário
 		System.out.println(p.parseTree());
-		System.out.println(p.code());
+		// System.out.println(p.code());
 		System.out.println("finalizado");
 
 		// Construindo arquivo

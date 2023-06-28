@@ -194,6 +194,72 @@ public class Parser {
 		return e;
 	}
 
+	private boolean romanSort(String lex) {
+		String temp = lex.substring(2);
+		char[] caracteres = temp.toCharArray();
+
+		for (int i = 0; i < caracteres.length - 1; i++) {
+			char caractereAtual = caracteres[i];
+			char proximoCaractere = caracteres[i + 1];
+
+			// Verifica a ordem dos caracteres romanos
+			char comp;
+			if (caracteres.length > 2) {
+				if (i < caracteres.length - 2) {
+					comp = caracteres[i + 2];
+					if (valueRoman(caractereAtual) == valueRoman(proximoCaractere)
+							&& valueRoman(proximoCaractere) == valueRoman(comp)) {
+						if (i < caracteres.length - 3) {
+							char comp2 = caracteres[i + 3];
+
+							if (valueRoman(comp) == valueRoman(comp2)) {
+								error("Literal romano com quantidade de algarismos inválida");
+							}
+						}
+					} else if (valueRoman(caractereAtual) < valueRoman(proximoCaractere)) {
+						System.out.println("Subtração " + comp);
+						if (valueRoman(proximoCaractere) < valueRoman(comp)) {
+							error("Literal romano com ordem de algarismo inválida");
+						}
+					}
+
+				} else if (i == caracteres.length - 2) {
+					if (valueRoman(caracteres[i - 1]) == valueRoman(caractereAtual)
+							&& valueRoman(caractereAtual) < valueRoman(proximoCaractere)) {
+						error("Literal romano com ordem e quantidade de algarismos inválida");
+					}
+
+				}
+			}
+
+		}
+
+		// Ordem válida
+		return true;
+	}
+
+	public static int valueRoman(char c) {
+		// Retorna o valor numérico do caractere romano
+		switch (c) {
+			case 'i':
+				return 1;
+			case 'v':
+				return 5;
+			case 'x':
+				return 10;
+			case 'l':
+				return 50;
+			case 'c':
+				return 100;
+			case 'd':
+				return 500;
+			case 'm':
+				return 1000;
+			default:
+				return 0;
+		}
+	}
+
 	private Expr factor() {
 		Expr e = null;
 		switch (look.tag()) {
@@ -209,7 +275,9 @@ public class Parser {
 				e = new Literal(move(), Tag.REAL);
 				break;
 			case LIT_ROM:
-				e = new Literal(move(), Tag.LIT_ROM);
+				if (romanSort(look.lexeme())) {
+					e = new Literal(move(), Tag.LIT_ROM);
+				}
 				break;
 			case TRUE:
 			case FALSE:

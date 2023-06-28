@@ -14,7 +14,7 @@ public class Assign extends Stmt {
 		if (check(i.type(), e.type()) == null)
 			error("valor de expressão "
 					+ "incompatível com o "
-					+ "tipo da variável " + i.type() + e.type());
+					+ "tipo da variável ");
 		id = i;
 		expr = e;
 		addChild(id);

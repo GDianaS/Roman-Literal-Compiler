@@ -2,7 +2,8 @@ programa teste inicio
   inteiro a;
   inteiro b;
   inteiro c;
-  a = 0riv;
+  a = 0rii;
   b = 0rxxx;
-  c = 50;
+  c = 0rvvvv;
+
 fim.
