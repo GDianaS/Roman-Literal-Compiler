@@ -4,7 +4,7 @@ public enum Tag {
 	// Reserved Words
 	PROGRAM("PROGRAM"), BEGIN("BEGIN"), END("END"),
 	INT("INT"), REAL("REAL"), BOOL("BOOL"),
-	WRITE("WRITE"), IF("IF"), ROM("ROM"),
+	WRITE("WRITE"), IF("IF"), ROM_IND("ROM_IND"),
 	// Assign
 	ASSIGN("ASSIGN"),
 	// Arithmetical Operators

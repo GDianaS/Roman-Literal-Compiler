@@ -208,6 +208,9 @@ public class Parser {
 			case LIT_REAL:
 				e = new Literal(move(), Tag.REAL);
 				break;
+			case LIT_ROM:
+				e = new Literal(move(), Tag.LIT_ROM);
+				break;
 			case TRUE:
 			case FALSE:
 				e = new Literal(move(), Tag.BOOL);

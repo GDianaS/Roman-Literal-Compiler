@@ -12,14 +12,14 @@ DECL     			::= TYPE ID
 ASSIGN   			::= ID = EXPR  
 WRITE				::= escreva(ID)  
 IF					::= se (EXPR) STMT  
-EXPR				::= EXPR "|" REL | REL  
+EXPR				::= EXPR "|" REL | REL | ROM
 REL					::= REL < ARITH | REL <= ARITH | REL > ARITH | ARITH  
 ARITH  				::= ARITH + TERM | ARITH - TERM | TERM  
 TERM				::= TERM * FACTOR | FACTOR  
-FACTOR				::= (EXPR) | ID | LIT_INT | LIT_REAL | LIT_BOOL  
+FACTOR				::= (EXPR) | ID | LIT_INT | LIT_REAL | LIT_BOOL
 
 ## Definições Regulares
-LETTER		::= a | b | ... | z | A | B | ... Z | _  
+LETTER		::= a | b | ... | z | A | B | ... Z |
 DIGIT		::= 0 | 1 | ... | 9  
 ID			::= LETTER (LETTER | DIGIT)*  
 LIT_INT		::= DIGIT+  
@@ -28,7 +28,6 @@ LIT_BOOL	::= verdadeiro | falso
 TYPE     	::= inteiro | real | booleano  
 
 ## Algoritmos Romanos
-READ_LIT_ROM  ::= 0r UN_LIT_ROM
-UN_LIT_ROM    ::= LIT_ROM LIT_ROMA| LIT_ROM LIT_ROMA LIT_ROM
-LIT_ROM       ::= i | v | x | l | c | d | m
+ROM           ::= 0r(LIT_ROM)+   
+LIT_ROM       ::= i | v | x | l | c | d | m   
    

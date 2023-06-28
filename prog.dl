@@ -1,7 +1,10 @@
 programa teste inicio
-  inteiro a; inteiro b; real c;
-  a = 2;
-  b = 30;
-  c = (a+b)*2.0;
-  escreva(c);
+  inteiro a;
+  inteiro b;
+  inteiro c;
+  a = 0riv;
+  b = 0rxxx;
+  c = 50;
+
+  
 fim.

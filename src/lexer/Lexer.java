@@ -133,10 +133,10 @@ public class Lexer {
 					String num = "";
 					do {
 						num += peek;
-						if (peek == 0) {
+						if (peek == '0') {
 							nextChar();
 							if (peek == 'r') {
-								String num_rom = "";
+								String num_rom = "0r";
 								nextChar();
 								do {
 									num_rom += peek;
@@ -149,6 +149,7 @@ public class Lexer {
 						}
 
 					} while (Character.isDigit(peek));
+
 					if (peek != '.')
 						return new Token(Tag.LIT_INT, num);
 					do {
