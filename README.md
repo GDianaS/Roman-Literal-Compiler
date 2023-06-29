@@ -4,7 +4,9 @@ Esta versao faz as análises léxica, sintática e semântica e a geração de c
 Ela está de acordo com a gramática abaixo.  
 
 GITHUB: https://github.com/GDianaS/Roman-Literal-Compiler
+
 Acadêmica: Gabriela Diana Sena de Sousa
+
 Disciplina: Compiladores
 
 ## Adicional
@@ -36,7 +38,7 @@ LIT_REAL	::= DIGIT+ . DIGIT+
 LIT_BOOL	::= verdadeiro | falso  
 TYPE     	::= inteiro | real | booleano  
 ```
-## Algoritmos Romanos
+## Algarismos Romanos
 ```
 ROM           ::= 0r(LIT_ROM)+   
 LIT_ROM       ::= i | v | x | l | c | d | m   
