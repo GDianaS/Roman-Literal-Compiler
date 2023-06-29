@@ -2,8 +2,8 @@ programa teste inicio
   inteiro a;
   inteiro b;
   inteiro c;
+  inteiro d;
+  d = 0rIVxx;
   a = 0rii;
   b = 0rxxx;
-  c = 0rvvvv;
-
 fim.

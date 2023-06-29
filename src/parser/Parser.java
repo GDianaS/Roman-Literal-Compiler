@@ -196,7 +196,13 @@ public class Parser {
 
 	private boolean romanSort(String lex) {
 		String temp = lex.substring(2);
-		char[] caracteres = temp.toCharArray();
+		char[] caracteres;
+		if (temp.startsWith("IV")) {
+			String temp2 = temp.substring(2);
+			caracteres = temp2.toCharArray();
+		} else {
+			caracteres = temp.toCharArray();
+		}
 
 		for (int i = 0; i < caracteres.length - 1; i++) {
 			char caractereAtual = caracteres[i];
@@ -255,6 +261,9 @@ public class Parser {
 				return 500;
 			case 'm':
 				return 1000;
+			case 'I':
+			case 'V':
+				return 4000;
 			default:
 				return 0;
 		}

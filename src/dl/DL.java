@@ -25,17 +25,16 @@ public class DL {
 
 		// Imprimindo a árvore sintática e código intermediário
 		System.out.println(p.parseTree());
-		// System.out.println(p.code());
+		System.out.println(p.code());
 		System.out.println("finalizado");
 
 		// Construindo arquivo
-		// try {
-		// PrintWriter pw =
-		// new PrintWriter("prog.ll");
-		// pw.write(p.code());
-		// pw.close();
-		// } catch (Exception e) {
-		// e.printStackTrace();
-		// }
+		try {
+			PrintWriter pw = new PrintWriter("prog.ll");
+			pw.write(p.code());
+			pw.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

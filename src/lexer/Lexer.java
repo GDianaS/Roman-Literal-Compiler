@@ -78,6 +78,8 @@ public class Lexer {
 			case 'c':
 			case 'd':
 			case 'm':
+			case 'I':
+			case 'V':
 				return true;
 			default:
 				return false;
