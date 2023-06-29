@@ -4,7 +4,9 @@ Esta versao faz as análises léxica, sintática e semântica e a geração de c
 Ela está de acordo com a gramática abaixo.  
 
 GITHUB: https://github.com/GDianaS/Roman-Literal-Compiler
+
 Acadêmica: Gabriela Diana Sena de Sousa
+
 Disciplina: Compiladores
 
 ## Adicional
